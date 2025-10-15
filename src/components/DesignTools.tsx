@@ -1,4 +1,12 @@
-export default function DesignTools({ dict }: any) {
+interface DesignToolsProps {
+  dict: {
+    sections: {
+      designTools: string;
+    };
+  };
+}
+
+export default function DesignTools({ dict }: DesignToolsProps) {
   return (
     <ul className="flex gap-4 items-center col-span-6 rounded-2xl bg-foreground dark:bg-gray-700 p-10">
       <li className="text-white text-xl font-bold border-r pr-4">

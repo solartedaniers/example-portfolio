@@ -13,19 +13,13 @@ export default function PortfolioSection() {
 
   return (
     <section className="col-span-12 bg-card rounded-2xl p-5 flex flex-col gap-4">
-      {/* Encabezado con barra vertical */}
       <div className="flex items-center gap-3">
         <span className="h-5 w-[2px] bg-gray-500"></span>
         <h2 className="text-lg font-semibold text-white">Portfolio</h2>
       </div>
-
-      {/* Contenedor de íconos */}
       <div className="flex flex-wrap gap-3 mt-1">
         {icons.map((item, index) => (
-          <div
-            key={index}
-            className="flex items-center justify-center bg-foreground text-white px-3 py-2 rounded-xl"
-          >
+          <div key={index} className="flex items-center justify-center bg-foreground text-white px-3 py-2 rounded-xl">
             {item.icon}
           </div>
         ))}

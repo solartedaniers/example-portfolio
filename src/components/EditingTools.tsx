@@ -8,12 +8,8 @@ export default function EditingTools({ dict }: EditingToolsProps) {
       <li className="text-white text-xl font-bold border-r pr-4">
         {dict.sections.editingTools}
       </li>
-      <li className="flex items-center bg-[#000155] rounded-lg font-bold text-[#a0a0f9] text-xl px-4 py-2">
-        Ae
-      </li>
-      <li className="flex items-center bg-[#02035e] rounded-lg font-bold text-[#9997f9] text-xl px-4 py-2">
-        Pr
-      </li>
+      <li className="flex items-center bg-[#000155] rounded-lg font-bold text-[#a0a0f9] text-xl px-4 py-2">Ae</li>
+      <li className="flex items-center bg-[#02035e] rounded-lg font-bold text-[#9997f9] text-xl px-4 py-2">Pr</li>
     </ul>
   );
 }
