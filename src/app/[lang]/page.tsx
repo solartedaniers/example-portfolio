@@ -20,13 +20,11 @@ export default async function HomePage(props: { params: Promise<{ lang: Lang }> 
   return (
     <div className="font-sans flex justify-center transition-colors duration-300 
                     bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen p-4">
-      {/* Language & Theme Toggle */}
       <div className="fixed top-4 right-4 flex gap-2 z-50">
         <LanguageSwitcher currentLang={lang} />
         <ThemeToggle />
       </div>
 
-      {/* Main Grid */}
       <main className="grid grid-cols-12 container mt-20 gap-10 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12">
         <AvatarSection />
         <IntroSection dict={dict} />

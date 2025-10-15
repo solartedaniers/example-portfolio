@@ -4,8 +4,7 @@ interface EditingToolsProps {
 
 export default function EditingTools({ dict }: EditingToolsProps) {
   return (
-    <ul className="flex gap-4 items-center col-span-6 rounded-2xl 
-                   bg-gray-200 dark:bg-gray-800 p-10">
+    <ul className="flex flex-wrap gap-4 items-center col-span-12 sm:col-span-6 rounded-2xl bg-gray-200 dark:bg-gray-800 p-6">
       <li className="text-gray-900 dark:text-white text-xl font-bold border-r pr-4">
         {dict.sections.editingTools}
       </li>
