@@ -41,11 +41,14 @@ export default function DetailsSection({ dict }: DetailsSectionProps) {
   return (
     <section className="col-span-12 rounded-2xl bg-gray-200 dark:bg-gray-800 p-6 flex flex-col justify-center h-full">
       <div className="flex items-center gap-4 mb-4">
+        {/* Título a la izquierda */}
         <h3 className="text-gray-900 dark:text-white text-xl font-bold">
           {details.title}
         </h3>
+        {/* Línea vertical */}
         <span className="h-6 w-px bg-gray-400 dark:bg-gray-600" />
-        <div className="flex gap-4 flex-wrap">
+        {/* Iconos centrados */}
+        <div className="flex flex-1 justify-center gap-4 flex-wrap">
           {detailItems.map((item) => (
             <DetailItem key={item.value} value={item.value} icon={item.icon} />
           ))}
