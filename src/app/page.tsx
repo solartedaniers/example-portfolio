@@ -4,8 +4,6 @@ export default function Home() {
   return (
     <div className='font-sans flex justify-center'>
       <main className='grid grid-cols-12 container mt-20 gap-10'>
-        {/* <Image src='/next.svg' alt='avatar' width={100} height={100} /> */}
-        {/* <span className='col-span-3 row-span-2 bg-white rounded-2xl'>IMG</span> */}
         <span className='flex items-center justify-center col-span-3 row-span-2 bg-white rounded-2xl overflow-hidden'>
           <Image src='/avatar.jpg' alt='avatar' width={300} height={300} />
         </span>
