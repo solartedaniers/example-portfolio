@@ -1,6 +1,17 @@
-export default function ExperienceCard({ data }: any) {
+interface ExperienceData {
+  title: string;
+  role: string;
+  period: string;
+  bullets: string[];
+}
+
+interface ExperienceCardProps {
+  data: ExperienceData;
+}
+
+export default function ExperienceCard({ data }: ExperienceCardProps) {
   return (
-    <article className="col-span-6 rounded-2xl bg-foreground dark:bg-gray-700 p-10">
+    <article className="col-span-6 rounded-2xl bg-foreground p-10">
       <section className="flex items-center justify-between border-b border-b-grey pb-10">
         <header className="flex flex-col">
           <h3 className="text-2xl font-bold text-white">{data.title}</h3>
@@ -11,7 +22,7 @@ export default function ExperienceCard({ data }: any) {
         </span>
       </section>
       <ul className="list-disc list-inside text-white text-sm mt-6">
-        {data.bullets.map((b: string) => (
+        {data.bullets.map((b) => (
           <li key={b}>{b}</li>
         ))}
       </ul>

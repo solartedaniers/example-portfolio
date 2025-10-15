@@ -1,6 +1,8 @@
-"use client";
+interface LanguagesSectionProps {
+  dict: { sections: { languages: string } };
+}
 
-export default function LanguagesSection({ dict }: { dict: any }) {
+export default function LanguagesSection({ dict }: LanguagesSectionProps) {
   return (
     <ul className="flex gap-4 items-center col-span-6 rounded-2xl bg-foreground p-10">
       <li className="text-white text-xl font-bold border-r pr-4">
