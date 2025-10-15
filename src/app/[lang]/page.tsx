@@ -11,15 +11,15 @@ import EditingTools from "@/components/EditingTools";
 import LanguagesSection from "@/components/LanguagesSection";
 import PortfolioSection from "@/components/PortfolioSection";
 import DetailsSection from "@/components/DetailsSection";
-
 import ThemeToggle from "@/components/ThemeToggle";
 
 export default async function HomePage(props: { params: Promise<{ lang: Lang }> }) {
-  const { lang } = await props.params; 
+  const { lang } = await props.params;
   const dict = await getDictionary(lang);
 
   return (
-    <div className="font-sans flex justify-center transition-colors duration-300 bg-background text-foreground min-h-screen p-4">
+    <div className="font-sans flex justify-center transition-colors duration-300 
+                    bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen p-4">
       {/* Language & Theme Toggle */}
       <div className="fixed top-4 right-4 flex gap-2 z-50">
         <LanguageSwitcher currentLang={lang} />
@@ -37,8 +37,8 @@ export default async function HomePage(props: { params: Promise<{ lang: Lang }> 
         <EducationSection dict={dict} />
         <EditingTools dict={dict} />
         <LanguagesSection dict={dict} />
-        <PortfolioSection />
-        <DetailsSection /> 
+        <PortfolioSection dict={dict} />
+        <DetailsSection dict={dict} />
       </main>
     </div>
   );

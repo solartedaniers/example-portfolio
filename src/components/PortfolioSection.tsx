@@ -1,8 +1,21 @@
 'use client';
 
+import React from "react";
 import { Briefcase, Palette, Camera, Video, Globe } from "lucide-react";
 
-export default function PortfolioSection() {
+interface PortfolioSectionDict {
+  title: string;
+}
+
+interface PortfolioSectionProps {
+  dict: {
+    sections: {
+      portfolio: PortfolioSectionDict;
+    };
+  };
+}
+
+export default function PortfolioSection({ dict }: PortfolioSectionProps) {
   const icons = [
     { icon: <Briefcase className="w-5 h-5 text-blue-400" /> },
     { icon: <Palette className="w-5 h-5 text-sky-400" /> },
@@ -12,17 +25,24 @@ export default function PortfolioSection() {
   ];
 
   return (
-    <section className="col-span-12 bg-card rounded-2xl p-5 flex flex-col gap-4">
-      <div className="flex items-center gap-3">
-        <span className="h-5 w-[2px] bg-gray-500"></span>
-        <h2 className="text-lg font-semibold text-white">Portfolio</h2>
-      </div>
-      <div className="flex flex-wrap gap-3 mt-1">
-        {icons.map((item, index) => (
-          <div key={index} className="flex items-center justify-center bg-foreground text-white px-3 py-2 rounded-xl">
-            {item.icon}
-          </div>
-        ))}
+    <section className="col-span-12 rounded-2xl bg-gray-200 dark:bg-gray-800 p-6 flex flex-col justify-center h-full">
+      <div className="flex items-center gap-4 mb-4">
+        <h3 className="text-gray-900 dark:text-white text-xl font-bold">
+          {dict.sections.portfolio.title}
+        </h3>
+        <span className="h-6 w-px bg-gray-400 dark:bg-gray-600" />
+        <div className="flex gap-4 flex-wrap">
+          {icons.map((item, index) => (
+            <div
+              key={index}
+              className="flex items-center justify-center bg-gray-300 dark:bg-gray-900 
+                         text-gray-900 dark:text-white rounded-xl w-20 h-20 text-xl font-medium 
+                         hover:opacity-80 transition-opacity"
+            >
+              {item.icon}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

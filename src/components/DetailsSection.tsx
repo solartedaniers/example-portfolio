@@ -1,28 +1,55 @@
 'use client';
 
-import { User, Mail, Phone, Flag } from "lucide-react";
+import React from 'react';
 
-export default function DetailsSection() {
-  const details = [
-    { icon: <User className="w-5 h-5 text-yellow-400" />, text: "26 years" },
-    { icon: <Mail className="w-5 h-5 text-red-400" />, text: "iamsunilfreelancer.com" },
-    { icon: <Phone className="w-5 h-5 text-green-400" />, text: "+91 9899052055" },
-    { icon: <Flag className="w-5 h-5 text-orange-400" />, text: "India" },
+interface DetailItemProps {
+  value: string;
+  icon: string;
+}
+
+const DetailItem: React.FC<DetailItemProps> = ({ value, icon }) => (
+  <span className="flex items-center gap-2 bg-gray-300 dark:bg-gray-900 
+                   rounded-lg text-gray-900 dark:text-white text-sm px-4 py-2 whitespace-nowrap">
+    <span className="text-lg">{icon}</span> {value}
+  </span>
+);
+
+interface DetailsSectionProps {
+  dict: {
+    sections: {
+      details: {
+        title: string;
+        age: string;
+        email: string;
+        phone: string;
+        location: string;
+      };
+    };
+  };
+}
+
+export default function DetailsSection({ dict }: DetailsSectionProps) {
+  const details = dict.sections.details;
+
+  const detailItems = [
+    { value: details.age, icon: '🎂' },
+    { value: details.email, icon: '✉️' },
+    { value: details.phone, icon: '📞' },
+    { value: details.location, icon: '🇮🇳' },
   ];
 
   return (
-    <section className="col-span-12 bg-card rounded-2xl p-5 flex flex-col gap-4">
-      <div className="flex items-center gap-3">
-        <span className="h-5 w-[2px] bg-gray-500"></span>
-        <h2 className="text-lg font-semibold text-white">Details</h2>
-      </div>
-      <div className="flex flex-wrap gap-3 mt-1">
-        {details.map((item, i) => (
-          <div key={i} className="flex items-center gap-2 bg-foreground text-white px-3 py-2 rounded-xl">
-            {item.icon}
-            <span className="text-sm">{item.text}</span>
-          </div>
-        ))}
+    <section className="col-span-12 rounded-2xl bg-gray-200 dark:bg-gray-800 p-6 flex flex-col justify-center h-full">
+      <div className="flex items-center gap-4 mb-4">
+        <h3 className="text-gray-900 dark:text-white text-xl font-bold">
+          {details.title}
+        </h3>
+        <span className="h-6 w-px bg-gray-400 dark:bg-gray-600" />
+        <div className="flex gap-4 flex-wrap">
+          {detailItems.map((item) => (
+            <DetailItem key={item.value} value={item.value} icon={item.icon} />
+          ))}
+        </div>
       </div>
     </section>
   );

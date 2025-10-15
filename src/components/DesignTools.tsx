@@ -8,8 +8,9 @@ interface DesignToolsProps {
 
 export default function DesignTools({ dict }: DesignToolsProps) {
   return (
-    <ul className="flex gap-4 items-center col-span-6 rounded-2xl bg-foreground dark:bg-gray-700 p-10">
-      <li className="text-white text-xl font-bold border-r pr-4">
+    <ul className="flex gap-4 items-center col-span-6 rounded-2xl 
+                   bg-gray-200 dark:bg-gray-800 p-10">
+      <li className="text-gray-900 dark:text-white text-xl font-bold border-r pr-4">
         {dict.sections.designTools}
       </li>
       <li className="flex items-center bg-[#360300] rounded-lg font-bold text-[#da9f4c] text-xl px-4 py-2">Ai</li>

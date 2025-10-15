@@ -27,6 +27,16 @@ export type Dictionary = {
     };
     editingTools: string;
     languages: string;
+
+    // Nuevas secciones para tus componentes
+    portfolio: { title: string };
+    details: {
+      title: string;
+      age: string;
+      email: string;
+      phone: string;
+      location: string;
+    };
   };
   switcher: { label: string; es: string; en: string };
 };
@@ -86,6 +96,16 @@ const dictionaries: Record<Lang, Dictionary> = {
       },
       editingTools: "Herramientas de edición",
       languages: "Idiomas",
+
+      // Nuevas secciones
+      portfolio: { title: "Portfolio" },
+      details: {
+        title: "Detalles",
+        age: "26 años",
+        email: "iamsunilfreelancer.com",
+        phone: "+91 9899052055",
+        location: "India",
+      },
     },
     switcher: { label: "Idioma", es: "Español", en: "Inglés" },
   },
@@ -143,6 +163,16 @@ const dictionaries: Record<Lang, Dictionary> = {
       },
       editingTools: "Editing Tools",
       languages: "Languages",
+
+      // Nuevas secciones
+      portfolio: { title: "Portfolio" },
+      details: {
+        title: "Details",
+        age: "26 years",
+        email: "iamsunilfreelancer.com",
+        phone: "+91 9899052055",
+        location: "India",
+      },
     },
     switcher: { label: "Language", es: "Spanish", en: "English" },
   },
